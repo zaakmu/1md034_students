@@ -57,40 +57,48 @@
 	<section>
 	  <h2> Customer Information </h2>
 	  <p> This is where you provide necessary information </p>
-	  <section id= "Delivery Information">
-	    <form>
-	      <p>
-		<label for="fullname" >Full name</label> <br>
-		<input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
-	      </p>
+	  <h3> Delivery Information : </h3>
+	  
+	  <form>
+	    <p>
+	      <label for="fullname" >Full name</label> <br>
+	      <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last name" />
+	    </p>
 
-	      <p>
-		<label for="email" >E-mail</label> <br>
-		<input type="text" id="email" name="em" required="required" placeholder="E-mail address" />
-	      </p>
+	    <p>
+	      <label for="email" >E-mail</label> <br>
+	      <input type="text" id="email" name="em" required="required" placeholder="E-mail address" />
+	    </p>
 
-	      <p>
-		<label for="street" >Street</label> <br>
-		<input type="text" id="street" name="st" required="required" placeholder="Street name" />
-	      </p>
+	    <p>
+	      <label for="street" >Street</label> <br>
+	      <input type="text" id="street" name="st" required="required" placeholder="Street name" />
+	    </p>
 
-	      <p>
-		<label for="house" >House</label> <br>
-		<input type="text" id="house" name="hs" required="required" placeholder="House number" />
-	      </p>
+	    <p>
+	      <label for="house" >House</label> <br>
+	      <input type="text" id="house" name="hs" required="required" placeholder="House number" />
+	    </p>
 
-	      <p>
-		<label for="Payment">Payment options</label><br />
-		<select id="Payment" name= "pay">
-		  <option> Swish </option>
-		  <option selected = "Credit card"> Credit card </option>
-		  <option> Klarna </option>
-		  <option> paypal </option>
-		</select>
-	      </p>
-	      
-	      
-	  </section>
+	    <p>
+	      <label for="Payment">Payment options</label><br />
+	      <select id="Payment" name= "pay">
+		<option> Swish </option>
+		<option selected = "Credit card"> Credit card </option>
+		<option> Klarna </option>
+		<option> paypal </option>
+	      </select>
+	    </p>
+
+	    <p>
+	      <label for="gender"> Gender</label><br>
+	      <input type="radio" name="gender" value="male">Male<br>
+	      <input type="radio" name="gender" value="female">Female<br>
+	      <input type="radio" name="gender" value="other">Other<br>
+	      <input type="radio" name="gender" checked="checked" value="do not wish">Do not wish to provide<br>
+	    </p>
+	    
+	    
       </main>
       <hr>
       <footer> &copy; 2018 Hypothetical Burgers Inc. </footer>
