@@ -73,7 +73,8 @@ body{
 
 .selection{
     display:grid;
-    column-gap: 50px;
+    column-count: 3;
+    grid-template-columns: 700px 700px 1200px;
     grid-row-gap: 10px;
 }
 
