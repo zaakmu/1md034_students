@@ -22,6 +22,17 @@ let burg4 = new MenuItem ('Hot Halloumi', 'hot chili sauce with onions, tomotoes
 let burg5 = new MenuItem ('Flamin DoubleCheese', 'Meat burger with onion , cheddar and blue cheese', 'contains gluten and lactose', '900 kCal', 'img/doublecheese.img' );
 
 
+document.getElementById("burg1").innerHTML = burg1.info();
+
+document.getElementById("burg2").innerHTML = burg2.info();
+
+document.getElementById("burg3").innerHTML = burg3.info();
+
+document.getElementById("burg4").innerHTML = burg4.info();
+
+document.getElementById("burg5").innerHTML = burg5.info();
+
+
 console.log(burg1.info());
 console.log(burg2.info());
 console.log(burg3.info());
