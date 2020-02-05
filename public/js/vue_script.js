@@ -21,47 +21,11 @@ let burg4 = new MenuItem ('Hot Halloumi', 'hot chili sauce with onions, tomotoes
 let burg5 = new MenuItem ('Flamin DoubleCheese', 'Meat burger with onion , cheddar and blue cheese', 'contains gluten and lactose', '900 kCal', 'img/doublecheese.img' );
 
 
+var menu = [burg1,burg2,burg3,burg4,burg5];
+
 const vm = new Vue({
-el: '#burg1',
+el: '#myId',
 data:{
-arbitaryVariableName: burg1.info()
+   copiedMenu: menu
+
 }} )
-
-const sm = new Vue({
-el : '#burg2',
-data: {
-arbitaryVariableName: burg2.info()
-}
-}
-)
-const dm = new Vue({
-el : '#burg3',
-data: {
-arbitaryVariableName: burg3.info()
-}
-}
-)
-const am = new Vue({
-el : '#burg4',
-data: {
-arbitaryVariableName: burg4.info()
-}
-}
-)
-const zm = new Vue({
-el : '#burg5',
-data: {
-arbitaryVariableName: burg5.info()
-}
-}
-)
-
-
-
-
-
-
-
-
-
-
