@@ -73,9 +73,15 @@ body{
 
 .selection{
     display:grid;
-    column-count: 5;
-    grid-template-columns: 350px 350px 350px 330px 330px;
-    grid-column-gap: 10px;
+    column-count: 3;
+    grid-template-columns: 25% 20% 20%;
+    grid-column-gap: 13%;
+    
+}
+.images{
+
+    width: 450px;
+    height: 400px;
     
 }
 

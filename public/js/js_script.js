@@ -24,6 +24,9 @@ let burg5 = new MenuItem ('Flamin DoubleCheese','Made with highest quality meat'
 
 
 var menu = [burg1, burg2,burg3,burg4,burg5];
+
+
+/*
 let myElement= document.getElementById("selectMenu");
 for(var burger of menu)
 {  
@@ -65,7 +68,7 @@ for(var burger of menu)
     }
 }
 
-
+*/
 
  
-   
+ 

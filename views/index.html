@@ -4,9 +4,11 @@
         <title>flamin' burger</title> <! -- Name which appears on tab -->
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src= "js/js_script.js" defer></script>
-	<script src= "js/vue_script.js" defer></script>
 	<script src= "https://vuejs.org/js/vue.js" defer></script>
+        <script src= "js/js_script.js" defer></script> 
+	<script src= "js/vue_script.js" defer></script>
+	
+
    </head>
 									
     <body>
@@ -17,11 +19,27 @@
 	    <img id = "headerimage" src="img/header.png" alt= "restaurant picture">
 	    <h1 id = "heading-text"> Welcome to Flamin' Burgers</h1>
 
-	  </section>
+	</section>
+	
 	<section id = "selectBurger">
 	  <h2> Select Burger </h2>
 	  <p> This is where you execute burger selection </p>
+
+	  
 	  <div class = "selection" id = "selectMenu">
+	    <div v-for= "burger in copiedMenu" >
+	      {{burger.name}}
+	      <img  class= "images" v-bind:src= "burger.image" >
+	    <ul>
+	      <li> {{burger.desc1}}</li>
+	      <li> {{burger.desc2}}</li>
+	      <li> {{burger.cal}}</li>
+	      <li v-if = "burger.allergies != ' '"> {{burger.allergies}}</li>
+	      </ul>
+
+
+
+	    </div>  
 	   </div>
 
 	
