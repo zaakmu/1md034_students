@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src= "https://vuejs.org/js/vue.js" defer></script>
+	<script type="text/javascript" src="js/menu.js" defer></script>
         <script src= "js/js_script.js" defer></script> 
 	<script src= "js/vue_script.js" defer></script>
 	
@@ -28,13 +29,14 @@
 	  
 	  <div class = "selection" id = "selectMenu">
 	    <div v-for= "burger in copiedMenu" >
-	      {{burger.name}}
-	      <img  class= "images" v-bind:src= "burger.image" >
+	     <b> {{burger.name}} </b>
+	      <img  class= "images" v-bind:src= "burger.img" >
 	    <ul>
 	      <li> {{burger.desc1}}</li>
 	      <li> {{burger.desc2}}</li>
-	      <li> {{burger.cal}}</li>
-	      <li v-if = "burger.allergies != ' '"> {{burger.allergies}}</li>
+	      <li> {{burger.kCal}}</li>
+	      <li v-if = "burger.lactose == true"> contains <b>lactose </b></li>
+	      <li v-if = "burger.gluten == true"> contains <b>gluten </b></li>
 	      </ul>
 
 

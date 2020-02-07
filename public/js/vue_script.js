@@ -26,12 +26,12 @@ let burg4 = new MenuItem ('Hot Halloumi','Deep fried halloumi' ,'hot chili sauce
 let burg5 = new MenuItem ('Flamin DoubleCheese','Made with highest quality meat' ,'Meat burger with onion , cheddar and blue cheese', 'contains gluten and lactose', '900 kCal', 'img/doublecheese.jpg' );
 
 */
-var menu = [burg1, burg2,burg3,burg4,burg5];
+
 
 const vm = new Vue({
 el: '#selectMenu',
 data:{
-    copiedMenu: menu,
+    copiedMenu: food,
 
 },
 } )
