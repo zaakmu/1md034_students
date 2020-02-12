@@ -1,7 +1,28 @@
 
 
-
 /*
+
+let myButton = document.getElementById("myButtonId");
+myButton.onclick = function (){
+    console.log("Buttton clicked !");
+}
+
+function myFunction(){
+let name = document.getElementById("name").value;
+
+let email = document.getElementById("email").value;
+let street = document.getElementById("street").value;
+let house = document.getElementById("house").value;
+let pay = document.getElementById("paymentStyle").value;
+let gender = document.getElementById("gender").value;
+
+var arrayForChecking = [name,email,street,house,pay,gender];
+
+
+console.log(arrayForChecking);
+}
+
+
 let myElement= document.getElementById("selectMenu");
 for(var burger of menu)
 {  

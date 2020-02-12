@@ -3,20 +3,20 @@ let food = [
     {
 	"name": "Flamin' Hot CheeseBurger",
 	"desc1": "Made with highest quality meat",
-	"desc2": "Hot siracha sauce with bacon, cheese and onions",
-	"kCal": 750,
-	"lactose": false,
+	"desc2": "Ketchup and mayo with pickles",
+	"kCal": 400,
+	"lactose": true,
 	"gluten": true,
-	"img": "img/cheeseburger.jpg"
+	"img": "img/cheeseburger.png"
     },
     {
 	"name": "Flamin' ChickenBurger",
 	"desc1": "Deep fried chicken filet",
-	"desc2": "flamin sauce with cabbage coleslaw",
+	"desc2": "Curry sauce with lettuce and tomatoes",
 	"kCal": 450,
 	"lactose": true,
 	"gluten": true,
-	"img": "img/chickenBurger.jpg"
+	"img": "img/chickenburger.png"
     },
     {
 	"name": "Tangy FishBurger",
@@ -25,24 +25,24 @@ let food = [
 	"kCal": 300,
 	"lactose": true,
 	"gluten": true,
-	"img": "img/fishburger.jpg"
+	"img": "img/fishburger.png"
     },
     {
 	"name": "Flamin' Hot Halloumi",
 	"desc1": "Deep fried halloumi",
-	"desc2": "hot chili sauce with onions, tomatoes and ruccola",
-	"kCal": 400,
+	"desc2": "Coleslaw dressing with lettuce and tomatoes ",
+	"kCal": 500,
 	"lactose": true,
 	"gluten": true,
-	"img": "img/halloumi.jpg"
+	"img": "img/halloumi.png"
     },
     {
 	"name": "Flamin' DoubleBurger",
 	"desc1": "Made with highest quality meat",
-	"desc2": "Dijon mustard with onion,cheddar and blue cheese",
+	"desc2": "BBQ-sauce with bacon,tomato,onions and cheese",
 	"kCal": 750,
 	"lactose": true,
 	"gluten": true,
-	"img": "img/doublecheese.jpg"
+	"img": "img/doublecheese.png"
     }
 ]

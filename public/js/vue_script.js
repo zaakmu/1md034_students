@@ -25,15 +25,39 @@ let burg4 = new MenuItem ('Hot Halloumi','Deep fried halloumi' ,'hot chili sauce
 
 let burg5 = new MenuItem ('Flamin DoubleCheese','Made with highest quality meat' ,'Meat burger with onion , cheddar and blue cheese', 'contains gluten and lactose', '900 kCal', 'img/doublecheese.jpg' );
 
+
+
+
 */
 
-
 const vm = new Vue({
-el: '#selectMenu',
-data:{
-    copiedMenu: food,
+    el:'#info',
+    data: {
+        copiedMenu: food,
+        burgerSelected: [],
+        name: '',
+        email: '',
+        street: '',
+        house: '',
+        paymentStyle: 'Credit card',
+        gender: 'do not wish',
+        selected: [],
+    },
+    methods:{
+        markDone: function(){
+            this.selected = [this.name,this.email,this.street,this.house,this.paymentStyle,this.gender,this.burgerSelected];
+            let order = document.getElementById("order").style.visibility = "visible";
 
-},
-} )
+            console.log(this.selected);
+           
+        }
+    }
+});
+
+
+
+
+
+
 
 
