@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src= "https://vuejs.org/js/vue.js" defer></script>
+	<script src="/socket.io/socket.io.js" defer></script>
 	<script type="text/javascript" src="js/menu.js" defer></script>
         <script src= "js/js_script.js" defer></script> 
 	<script src= "js/vue_script.js" defer></script>
@@ -39,7 +40,7 @@
 	      <li> {{burger.kCal}} kCal</li> 
 	      <li v-if = "burger.lactose == true"> contains <b>lactose </b></li>
 		  <li v-if = "burger.gluten == true"> contains <b>gluten </b></li>
-		  <li>Choose this burger <input v-model="burgerSelected"  id = "nameCheckbox" type = "checkbox" v-bind:value="burger.name"></li>
+		  <li>Add to order <input v-model="burgerSelected"  id = "nameCheckbox" type = "checkbox" v-bind:value="burger.name"></li>
 		  </ul>
 		  
 
@@ -65,17 +66,7 @@
 	    <p>
 	      <label for="email" >E-mail</label> <br>
 	      <input  v-model= "email" type="text" id="email" name="em" required="required" placeholder="E-mail address" />
-	    </p>
-
-	    <p >
-	      <label for="street" >Street</label> <br>
-	      <input v-model ="street" type="text" id="street" name="st" required="required" placeholder="Street name" />
-	    </p>
-
-	    <p>
-	      <label for="house" >House</label> <br>
-	      <input v-model = "house" type="text" id="house" name="hs" required="required" placeholder="House number" />
-	    </p>
+		</p>
 
 	    <p>
 	      <label for="Payment">Payment options</label><br />
@@ -85,7 +76,16 @@
 		<option> Klarna </option>
 		<option> paypal </option>
 	      </select>
-	    </p>
+		</p>
+		<div class="viewbox">
+		<div id="dots" v-on:click="addOrder">
+			<div 
+			  v-for="(order, key) in orders"
+			  v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+			  {{key}}
+			</div>
+		</div>
+		</div>
 
 	    <p >
 	      <label for="gender"> Gender</label><br>
@@ -100,17 +100,22 @@
 	  </section>
 	  <div id = "myButtonId">
 		<button v-on:click = "markDone" type="submit"><img src="img/delivery.jpg" /> Place my order!</button>
-	</div>
-		<div id = "order">
+	</div >
+		<div id = "summary">
+			<h2>Order Confirmation</h2>
+			<h3>Customer details</h3>
+			<div>Name: {{selected[0]}}</div>
+			<div>Email: {{selected[1]}}</div>
+			<div>Payment: {{selected[2]}}</div>
+			<div>Gender: {{selected[3]}}</div>
+			<h3>Order summary</h3>
 			<ul>
-				Order
-				<li>Name: {{name}}</li>
-				<li>Email:{{email}}</li>
-				<li>Address : {{street}} , {{house}}</li>
-				<li>Payment method: {{paymentStyle}}</li>
-				<li>{{gender}}</li>
-				<li>{{burgerSelected}}</li>
+				<li v-for = "(burger,index) in burgerSelected">
+					{{burgerSelected[index]}}
+				</li>
 			</ul>
+			
+		
 		</div>
 	
   		</div>
