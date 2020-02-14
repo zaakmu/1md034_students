@@ -9,13 +9,9 @@ const vm = new Vue({
     data: {
         orders:{},
         finalOrder: {
-            details:{
-                x: 0,
-                y: 0,
-            },
-
+            details:{ x: 0,  y: 0,  },
         },
-        num: 0,
+        nextOrder: 0,
         copiedMenu: food,
         burgerSelected: [],
         name: '',
@@ -23,31 +19,39 @@ const vm = new Vue({
         paymentStyle: 'Credit card',
         gender: 'do not wish',
         selected: [],
-    },
+         },
     
       methods: {
         markDone: function(){
             this.selected = [this.name,this.email,this.paymentStyle,this.gender,this.burgerSelected]; 
-            this.addOrder();
+            
+            
+            
         },
 
         getNext: function() {
          
-          this.num += 1;
-          return this.num;
+          this.nextOrder += 1;
+          return this.nextOrder;
         },
-        addOrder: function() {
+        addOrder: function(event) {
          
-          let offset = {
-            x: event.currentTarget.getBoundingClientRect().left,
-            y: event.currentTarget.getBoundingClientRect().top,
-          };
-          socket.emit('addOrder', {
-            orderId: this.getNext(),
-            details:  this.finalOrder.details,
-            
-            orderItems: this.burgerSelected,
-             });
+	    let offset = {
+		x: this.finalOrder.details.x,
+		y: this.finalOrder.details.y,
+	    };
+
+	  
+	    
+	    socket.emit("addOrder", { 
+		orderId: this.getNext(),
+		details: { 
+		    x: this.finalOrder.details.x,
+		    y: this.finalOrder.details.y,
+		},
+		customerInfo: [this.name,this.email,this.paymentStyle,this.gender],
+		orderItems: this.burgerSelected,
+	    });
          },
          displayOrder: function(event) {
          
@@ -58,11 +62,11 @@ const vm = new Vue({
             
             this.finalOrder.details.x= event.clientX - 10 - offset.x;
             this.finalOrder.details.y= event.clientY - 10 - offset.y;
-        }
+        },
               
           
     
-      }
+      },
 });
 
 

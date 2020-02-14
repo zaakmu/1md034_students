@@ -77,6 +77,7 @@
 		<option> paypal </option>
 	      </select>
 		</p>
+		<div>Please indicate point of delivery:</div>
 		<div class="viewbox">
 		<div id="dots" v-on:click="displayOrder">
 			<div 
@@ -98,14 +99,15 @@
 	 
 	  </section>
 	  <div id = "myButtonId">
-		<button v-on:click = "markDone" type="submit"><img src="img/delivery.jpg" /> Place my order!</button>
+		<button v-on:click = "markDone(); addOrder();"  type="submit"><img src="img/delivery.jpg" /> Place my order!</button>
 	</div >
 		<div id = "summary">
 			<h2>Order Confirmation</h2>
 			<h3>Customer details</h3>
 			<div>Name: {{selected[0]}}</div>
 			<div>Email: {{selected[1]}}</div>
-			<div>Payment: {{selected[2]}}</div>
+			<div>Deliver to: {{finalOrder.details.x}} x / {{finalOrder.details.y}} y</div>
+			<div>Payment method: {{selected[2]}}</div>
 			<div>Gender: {{selected[3]}}</div>
 			<h3>Order summary</h3>
 			<ul>
