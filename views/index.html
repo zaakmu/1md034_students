@@ -40,7 +40,7 @@
 	      <li> {{burger.kCal}} kCal</li> 
 	      <li v-if = "burger.lactose == true"> contains <b>lactose </b></li>
 		  <li v-if = "burger.gluten == true"> contains <b>gluten </b></li>
-		  <li>Add to order <input v-model="burgerSelected"  id = "nameCheckbox" type = "checkbox" v-bind:value="burger.name"></li>
+		  <p>Add to order <input v-model="burgerSelected"  id = "nameCheckbox" type = "checkbox" v-bind:value="burger.name"></p>
 		  </ul>
 		  
 
@@ -78,11 +78,10 @@
 	      </select>
 		</p>
 		<div class="viewbox">
-		<div id="dots" v-on:click="addOrder">
+		<div id="dots" v-on:click="displayOrder">
 			<div 
-			  v-for="(order, key) in orders"
-			  v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-			  {{key}}
+			  v-bind:style="{ left: finalOrder.details.x + 'px', top: finalOrder.details.y + 'px'}">
+			  T
 			</div>
 		</div>
 		</div>

@@ -8,6 +8,14 @@ const vm = new Vue({
     el:'#info',
     data: {
         orders:{},
+        finalOrder: {
+            details:{
+                x: 0,
+                y: 0,
+            },
+
+        },
+        num: 0,
         copiedMenu: food,
         burgerSelected: [],
         name: '',
@@ -16,29 +24,19 @@ const vm = new Vue({
         gender: 'do not wish',
         selected: [],
     },
-    created: function() {
-        socket.on('initialize', function(data) {
-          this.orders = data.orders;
-        }.bind(this));
     
-      
-        socket.on('currentQueue', function(data) {
-          this.orders = data.orders;
-        }.bind(this));
-      },
       methods: {
         markDone: function(){
             this.selected = [this.name,this.email,this.paymentStyle,this.gender,this.burgerSelected]; 
+            this.addOrder();
         },
 
         getNext: function() {
          
-          let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
-            return Math.max(last, next);
-          }, 0);
-          return lastOrder + 1;
+          this.num += 1;
+          return this.num;
         },
-        addOrder: function(event) {
+        addOrder: function() {
          
           let offset = {
             x: event.currentTarget.getBoundingClientRect().left,
@@ -46,16 +44,25 @@ const vm = new Vue({
           };
           socket.emit('addOrder', {
             orderId: this.getNext(),
-            details: {
-              x: event.clientX - 10 - offset.x,
-              y: event.clientY - 10 - offset.y,
-            },
-            orderItems: ['Beans', 'Rice'],
-        });
-   
-        },
-    },
-
+            details:  this.finalOrder.details,
+            
+            orderItems: this.burgerSelected,
+             });
+         },
+         displayOrder: function(event) {
+         
+            let offset = {
+              x: event.currentTarget.getBoundingClientRect().left,
+              y: event.currentTarget.getBoundingClientRect().top,
+            };
+            
+            this.finalOrder.details.x= event.clientX - 10 - offset.x;
+            this.finalOrder.details.y= event.clientY - 10 - offset.y;
+        }
+              
+          
+    
+      }
 });
 
 
